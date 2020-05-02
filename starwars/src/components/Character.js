@@ -2,19 +2,19 @@
 import React from "react";
 import styled from "styled-components";
 
-const CharacterStylerDiv = styled.div`
+const StyledPTags = styled.p`
     color: green;
     padding: 2%;
 `;
 
 const Character = props => {
-    let charStats = props.swapiData;
+    
     return (
-        <CharacterStylerDiv>
-            {charStats.forEach( (name) => {
-                return <p>{charStats.name}</p> 
+        <div>
+            {props.swapiData.map( (charArr) => {
+                return <StyledPTags>{charArr.name}, {charArr.birth_year}</StyledPTags> 
             })}
-        </CharacterStylerDiv>
+        </div>
     );
 };
 
