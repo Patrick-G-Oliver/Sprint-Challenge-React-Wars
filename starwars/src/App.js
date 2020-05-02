@@ -17,8 +17,8 @@ const App = () => {
   useEffect( () => {
     axios.get("https://swapi.py4e.com/api/people/") 
       .then(response => {
-        console.log('response', response.data)
-        setSwapiData(response.data)
+        console.log('response', response.data.results)
+        setSwapiData(response.data.results)
       })
       .catch(err => {
         console.log(err)
